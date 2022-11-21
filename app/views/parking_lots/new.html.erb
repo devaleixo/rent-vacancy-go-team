@@ -1,0 +1,9 @@
+<h1>ParkingLots#new</h1>
+<p>Find me in app/views/parking_lots/new.html.erb</p>
+<%= simple_form_for(@parking_lot) do |f| %>
+  <%= f.input :address %>
+  <%= f.input :price %>
+  <%= f.input :overview %>
+  <%= f.input :img_url %>
+  <%= f.submit %>
+<% end %>
