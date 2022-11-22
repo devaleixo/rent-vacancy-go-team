@@ -1,6 +1,17 @@
-<h1>ParkingLots#index</h1>
-<p>Find me in app/views/parking_lots/index.html.erb</p>
-teste
-<% @parking_lots.each do |lot|%>
-<p><%= lot.address%></p>
-<%end%>
+<h1 class="text-center">Parking Lots</h1>
+
+<div class="cards">
+  <%@parking_lots.each do |e| %>
+    <%= link_to parking_lot_path(e), class: "no-deco" do %>
+      <div class="card-trip">
+        <img src="<%= (e.img_url) %>" />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= e.address %></h2>
+          </div>
+          <h2 class="card-trip-pricing"><%= e.price %></h2>
+        </div>
+      </div>
+    <%end%>
+  <%end%>
+</div>

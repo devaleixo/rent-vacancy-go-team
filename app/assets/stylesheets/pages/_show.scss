@@ -1,0 +1,65 @@
+
+
+.show-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-lot {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 800px;
+  margin-top: 50px;
+}
+
+.card-lot > img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-lot h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.card-lot p {
+  font-size: 18px;
+  opacity: .7;
+  margin-top: 20px;
+}
+
+
+.card-lot .card-lot-infos {
+  padding: 16px;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  height: 200px;
+  align-items: flex-start;
+}
+
+.card-lot-infos {
+  display: flex;
+  right: 16px;
+  top: -20px;
+  width: 800px;
+  margin: 15px;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #11519B;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #0a2d54;
+  color: white;
+}
