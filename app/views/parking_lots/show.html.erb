@@ -8,7 +8,7 @@
         <p><%=@parking_lot.overview%></p>
       </div>
       <div>
-        <a class="btn btn-flat" href="#">Book now</a>
+        <%= link_to "Book now", new_parking_lot_reservation_path(@parking_lot), class: "btn btn-flat" %>
       </div>
     </div>
 </div>

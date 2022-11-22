@@ -6,6 +6,7 @@ class ParkingLotsController < ApplicationController
 
   def show
     authorize @parking_lot
+    @reservation = Reservation.new
   end
 
   def new

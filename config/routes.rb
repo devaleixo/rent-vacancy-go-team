@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :parking_lots do
+    resources :reservations, only: [:new, :create, :destroy]
     collection do
       get :mylots
     end
