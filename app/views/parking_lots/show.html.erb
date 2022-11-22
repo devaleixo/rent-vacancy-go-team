@@ -1,5 +1,7 @@
 <div class="card-product">
-    <img src="<%@parking_lot.img_url%>" />
+  <% @parking_lot.photos.each do |photo| %>
+    <%= image_tag(photo)  %>
+  <% end %>
     <div class="card-product-infos">
       <h2><%=@parking_lot.address%></h2>
       <p>R$: <strong><%=@parking_lot.price%></strong> only.</p>

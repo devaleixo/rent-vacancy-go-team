@@ -45,7 +45,8 @@ class ParkingLotsController < ApplicationController
 private
 
 def params_parkinglot
-  params.require(:parking_lot).permit(:address, :price, :overview, :img_url)
+  params.require(:parking_lot).permit(:address, :price, :overview, photos: [])
+
 end
 
 def set_parkinglot
