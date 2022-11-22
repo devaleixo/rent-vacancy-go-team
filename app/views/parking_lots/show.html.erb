@@ -1,8 +1,15 @@
-<div class="card-product">
-  <img src="<%@parking_lot.img_url%>" />
-  <div class="card-product-infos">
-    <h2><%=@parking_lot.address%></h2>
-    <p>R$: <strong><%=@parking_lot.price%></strong> only.</p>
-    <p><%=@parking_lot.overview%></p>
+<div class="show-content">
+  <div class="card-lot">
+    <img src="<%=@parking_lot.img_url%>" />
+    <div class="card-lot-infos">
+      <div>
+        <h2><%=@parking_lot.address%></h2>
+        <p>R$: <strong><%=@parking_lot.price%></strong> only.</p>
+        <p><%=@parking_lot.overview%></p>
+      </div>
+      <div>
+        <a class="btn btn-flat" href="#">Book now</a>
+      </div>
+    </div>
   </div>
 </div>
