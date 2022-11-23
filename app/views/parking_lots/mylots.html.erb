@@ -1,2 +1,9 @@
-<h1>hello</h1>
-<p><%= @parking_lots.count %></p>
+<h1>My parking-lots</h1>
+<div class="flex-column">
+<% @parking_lots.each do |res| %>
+<img src="<%= url_for(res.photos.first)%>" width="400" />
+<p><%= res.address %></p>
+<p><%= res.price %></p>
+<p></p>
+<% end %>
+</div>
