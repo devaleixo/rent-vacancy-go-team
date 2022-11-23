@@ -1,6 +1,6 @@
 <div class="show-content">
   <div class="card-lot">
-    <img src="<%=@parking_lot.img_url%>" />
+    <img src="<%= url_for(@parking_lot.photos.first)%>" />
     <div class="card-lot-infos">
       <div>
         <h2><%=@parking_lot.address%></h2>

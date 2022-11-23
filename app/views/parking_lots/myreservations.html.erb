@@ -1,11 +1,16 @@
 <h1 class="text-center">My reservations</h1>
-
+<div class="d-flex">
 <% @reservations.each do |res| %>
-  <img src="<%= url_for(res.parking_lot.photos.first) %>" />
+  <img src="<%= url_for(res.parking_lot.photos.first) width="400" %>" />
+  <div class="flex-column align-items-center align-self-center">
   <p><%= res.parking_lot.address %></p>
   <p>Reservation date: <%= res.reservation_date %></p>
   <%= link_to "Delete",
       parking_lot_path(res),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   %>
-<% end %>
+  <% end %>
+ </div>
+ </div>
+
+
