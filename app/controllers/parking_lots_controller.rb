@@ -45,6 +45,11 @@ class ParkingLotsController < ApplicationController
     authorize @parking_lots
   end
 
+  def myreservations
+    @reservations = Reservation.where(user_id: current_user.id)
+    authorize @reservations
+  end
+
   private
 
   def params_parkinglot

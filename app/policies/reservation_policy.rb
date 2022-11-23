@@ -21,4 +21,8 @@ class ReservationPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def myreservations?
+    true
+  end
 end
