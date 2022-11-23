@@ -1,3 +1,13 @@
 <h2>My reservations</h2>
 
-<p><%= @reservations.count %></p>
+<div class="d-flex">
+  <% @reservations.each do |res| %>
+  <img src="<%= url_for(res.parking_lot.photos.first)%>" width="400" />
+  <div class="flex-column align-items-center align-self-center">
+    <p><%= res.parking_lot.address %></p>
+    <p><%= res.parking_lot.price %></p>
+    <p><%= res.reservation_date %></p>
+    <p></p>
+    <% end %>
+  </div>
+</div>

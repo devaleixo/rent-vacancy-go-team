@@ -4,7 +4,7 @@
   <%@parking_lots.each do |e| %>
     <%= link_to parking_lot_path(e), class: "no-deco" do %>
       <div class="card-trip">
-        <img src="<%= (e.img_url) %>" />
+        <img src="<%= url_for(e.photos.first)%>" />
         <div class="card-trip-infos">
           <div>
             <h2><%= e.address %></h2>
