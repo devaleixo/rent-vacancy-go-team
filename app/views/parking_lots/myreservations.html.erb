@@ -1,3 +1,11 @@
-<h2>My reservations</h2>
+<h1 class="text-center">My reservations</h1>
 
-<p><%= @reservations.count %></p>
+<% @reservations.each do |res| %>
+  <img src="<%= url_for(res.parking_lot.photos.first) %>" />
+  <p><%= res.parking_lot.address %></p>
+  <p>Reservation date: <%= res.reservation_date %></p>
+  <%= link_to "Delete",
+      parking_lot_path(res),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+<% end %>
