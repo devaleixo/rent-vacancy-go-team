@@ -20,6 +20,10 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+    authorize @reservation
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to parking_lot_reservations_path, status: :see_other
   end
 
   private
