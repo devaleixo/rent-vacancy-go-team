@@ -21,4 +21,8 @@ class ParkingLotPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def mylots?
+    true
+  end
 end

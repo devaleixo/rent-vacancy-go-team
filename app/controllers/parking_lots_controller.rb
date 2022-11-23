@@ -1,5 +1,7 @@
 class ParkingLotsController < ApplicationController
   before_action :set_parkinglot, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @parking_lots = policy_scope(ParkingLot)
   end
@@ -20,7 +22,6 @@ class ParkingLotsController < ApplicationController
     authorize @parking_lot
     @parking_lot.save
     redirect_to parking_lots_path
-
   end
 
   def edit
@@ -40,17 +41,17 @@ class ParkingLotsController < ApplicationController
   end
 
   def mylots
-    @parking_lots = ParkingLot.where(user_id: params[:id])
+    @parking_lots = ParkingLot.where(user_id: current_user.id)
+    authorize @parking_lots
   end
 
-private
+  private
 
-def params_parkinglot
-  params.require(:parking_lot).permit(:address, :price, :overview, photos: [])
+  def params_parkinglot
+    params.require(:parking_lot).permit(:address, :price, :overview, photos: [])
+  end
 
-end
-
-def set_parkinglot
-  @parking_lot = ParkingLot.find(params[:id])
-end
+  def set_parkinglot
+    @parking_lot = ParkingLot.find(params[:id])
+  end
 end

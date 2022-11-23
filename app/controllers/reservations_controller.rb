@@ -22,6 +22,10 @@ class ReservationsController < ApplicationController
   def destroy
   end
 
+  def my_reservations
+
+  end
+
   private
 
   def reservation_params
