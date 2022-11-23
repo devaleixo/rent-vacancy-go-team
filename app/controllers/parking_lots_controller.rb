@@ -4,6 +4,12 @@ class ParkingLotsController < ApplicationController
 
   def index
     @parking_lots = policy_scope(ParkingLot)
+    @markers = @parking_lots.geocoded.map do |pl|
+      {
+        lat: pl.latitude,
+        lng: pl.longitude
+      }
+    end
   end
 
   def show
