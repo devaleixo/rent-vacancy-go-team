@@ -43,7 +43,7 @@ class ParkingLotsController < ApplicationController
   def destroy
     authorize @parking_lot
     @parking_lot.destroy
-    redirect_to parking_lots_index_path, status: :see_other
+    redirect_to parking_lots_path, status: :see_other
   end
 
   def mylots
