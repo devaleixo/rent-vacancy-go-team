@@ -1,22 +1,40 @@
-<h1 class="text-center">Parking Lots</h1>
-
-<div class="cards">
-  <%@parking_lots.each do |e| %>
-    <%= link_to parking_lot_path(e), class: "no-deco" do %>
-      <div class="card-trip">
-        <img src="<%= url_for(e.photos.first)%>" />
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= e.address %></h2>
-          </div>
-          <h2 class="card-trip-pricing"><%= e.price_per_day %></h2>
-        </div>
-      </div>
-    <%end%>
-  <%end%>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1604063155785-ee4488b8ad15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80);">
+    <<h1 class="text-center">Parking Lots</h1>
 </div>
+
+<div class="container">
+  <div class="row">
+  <div class="cards col-6">
+    <%@parking_lots.each do |e| %>
+      <%= link_to parking_lot_path(e), class: "no-deco" do %>
+        <div class="card-trip">
+          <img src="<%= url_for(e.photos.first)%>" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= e.address %></h2>
+            </div>
+            <h2 class="card-trip-pricing">$<%= e.price %></h2>
+          </div>
+
+=======
+          <h2 class="card-trip-pricing"><%= e.price_per_day %></h2>
+
+        </div>
+      <%end%>
+    <%end%>
+  </div>
+<div class="row col-6 mt-4">
+  <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
+</div>
+
+
 <div style="width: 100%; height: 600px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+
