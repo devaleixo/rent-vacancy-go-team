@@ -3,7 +3,6 @@
 <% @parking_lots.each do |res| %>
 <img src="<%= url_for(res.photos.first)%>" width="400" />
 <p><%= res.address %></p>
-<p><%= res.price %></p>
-<p></p>
+<p><%= res.price_per_day %></p>
 <% end %>
 </div>

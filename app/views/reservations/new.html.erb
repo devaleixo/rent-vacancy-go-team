@@ -1,5 +1,8 @@
 <h2>Create your reservation!</h2>
  <%= simple_form_for([@parking_lot, @reservation]) do |f| %>
     <%= f.input :reservation_date %>
+    <%= f.input :end_reservation_date %>
+
+
     <%= f.submit %>
   <% end %>
