@@ -15,10 +15,10 @@ g2 = User.create!(email: "someemdasdail@gmail.com", password: "fuckyou")
 g3 = User.create!(email: "someeasdasdadmail@gmail.com", password: "fuckyou")
 g4 = User.create!(email: "someedasdmail@gmail.com", password: "fuckyou")
 puts "creating and relationating with users"
-ParkingLot.create!(address: "qualquer coisa", price: "500", overview:"dsadasdas", user:g1, img_url: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGFya2luZyUyMGxvdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60")
-ParkingLot.create!(address: "outra coisa", price: "500", overview:"dsadasdas", user:g2, img_url: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1767&q=80")
-ParkingLot.create!(address: "alguma coisa", price: "500", overview:"dsadasdas", user:g3, img_url: "https://images.unsplash.com/photo-1590938076771-dfe17af4d484?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
-ParkingLot.create!(address: "nenhuma coisa", price: "500", overview:"dsadasdas",user:g4, img_url: "https://images.unsplash.com/photo-1604063155785-ee4488b8ad15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80")
-ParkingLot.create!(address: "lmao coisa", price: "500", overview:"dsadasdas",user:g4, img_url: "https://images.unsplash.com/photo-1604063155785-ee4488b8ad15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80")
+ParkingLot.create!(address: "qualquer coisa", price_per_day: "500", overview:"dsadasdas", user:g1, img_url: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGFya2luZyUyMGxvdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60")
+ParkingLot.create!(address: "outra coisa", price_per_day: "500", overview:"dsadasdas", user:g2, img_url: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1767&q=80")
+ParkingLot.create!(address: "alguma coisa", price_per_day: "500", overview:"dsadasdas", user:g3, img_url: "https://images.unsplash.com/photo-1590938076771-dfe17af4d484?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
+ParkingLot.create!(address: "nenhuma coisa", price_per_day: "500", overview:"dsadasdas",user:g4, img_url: "https://images.unsplash.com/photo-1604063155785-ee4488b8ad15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80")
+ParkingLot.create!(address: "lmao coisa", price_per_day: "500", overview:"dsadasdas",user:g4, img_url: "https://images.unsplash.com/photo-1604063155785-ee4488b8ad15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80")
 
 puts "populated"
