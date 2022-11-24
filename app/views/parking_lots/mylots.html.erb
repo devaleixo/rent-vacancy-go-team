@@ -1,3 +1,4 @@
+
 <h1 class="d-flex justify-content-center">My parking-lots</h1>
 
 <div class="d-flex justify-content-center">
@@ -21,11 +22,11 @@
       </div>
     <% end %>
   </div>
-</div>
 
-              <%# <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Third slide">
-              </div> %>
+<h1>My parking-lots</h1>
+<div class="flex-column">
+<% @parking_lots.each do |res| %>
+<img src="<%= url_for(res.photos.first)%>" width="400" />
+<p><%= res.address %></p>
+<p><%= res.price_per_day %></p>
+<% end %>

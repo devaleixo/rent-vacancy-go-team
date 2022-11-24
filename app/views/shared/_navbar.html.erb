@@ -9,21 +9,23 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
-            <%= link_to "Post parking-lot", new_parking_lot_path, class:"navbar-options nav-link"%></a>
+            <%= link_to "Post Parking-lot", new_parking_lot_path, class:"navbar-options nav-link"%></a>
+          <li class="nav-item">
+          <%if user_signed_in? %>
+            <%= link_to "Log-out", destroy_user_session_path, data: {turbo_method: :delete}, class:"navbar-options nav-link"%></a>
+            <% else %>
+            <%= link_to "Login", new_user_session_path, class:"navbar-options nav-link"%></a>
+            <% end %>
           </li>
-          <%# <li class="nav-item">
-            <a href="#">Messages</a>
-          </li> %>
+
           <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/barbaracarloni" />
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBGwlAahaapmmJ7Riv_L_ZujOcfWSUJnm71g&usqp=CAU" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/parking_lots/myreservations">my reservations</a>
-              <a class="dropdown-item" href="/parking_lots/mylots">my lots</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="/users/sign_out">Log out</a>
+              <a class="dropdown-item" href="/parking_lots/myreservations">My reservations</a>
+              <a class="dropdown-item" href="/parking_lots/mylots">My lots</a>
             </div>
           </li>
-          <!--li class="nav-item"-->
-          <!--/li-->
+
       </ul>
     </div>
   </div>
