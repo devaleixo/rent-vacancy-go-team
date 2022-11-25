@@ -1,8 +1,8 @@
-<h2>Create your reservation!</h2>
- <%= simple_form_for([@parking_lot, @reservation]) do |f| %>
-    <%= f.input :reservation_date %>
-    <%= f.input :end_reservation_date %>
-
-
-    <%= f.submit %>
-  <% end %>
+  <div class="container form-create">
+    <h2>Choose Your Rent Dates</h2>
+    <%= simple_form_for([@parking_lot, @reservation]) do |f| %>
+      <%= f.input :reservation_date, as: :date, html5: true, label: "Check-in", class: "start", required: false %>
+      <%= f.input :end_reservation_date, html5: true, label: "Check-out", class: "end", required: false %>
+      <%= f.submit class: "submit"%>
+        <% end %>
+</div>

@@ -1,0 +1,32 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+.card-form {
+	margin: 2rem auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 600px;
+	background-color: #FFF;
+	border-radius: 10px;
+	box-shadow: 0 10px 20px 0 rgba(#999, .25);
+	padding: .75rem;
+}
+
+.btn{
+  .btn {
+    color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    font-weight: bold;
+    background: linear-gradient(#167FFB, blue);
+    transition: background 0.3s ease;
+    border: 1px solid #0F60C4;
+  }
+
+  .btn:hover {
+    background: linear-gradient(#147EFF, #0F67DA);
+    color: white;
+  }
+}
