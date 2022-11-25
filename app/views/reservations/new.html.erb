@@ -7,7 +7,7 @@
     <%= f.submit %>
   <% end %>
 
-Price <span id='price'>127</span><br/>
+Price <span id='price'><%=@parking_lot.price_per_day.to_i%></span><br/>
 <button onclick="calcValue()">Calculate</button><br/>
 Total Value <span id='value'></span>
 
@@ -25,4 +25,3 @@ Total Value <span id='value'></span>
   document.getElementById('value').innerHTML=totalDays()*parseInt(document.getElementById('price').innerHTML);
 }
 </script>
-
