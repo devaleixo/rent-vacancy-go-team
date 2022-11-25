@@ -3,19 +3,24 @@
 <div class="d-flex justify-content-center">
   <div class="flex-column">
     <% @parking_lots.each do |res| %>
-      <div class="card mb-4" style="width: 80rem;">
+      <div class="card mb-4 rounded" style="width: 80rem;">
           <div class="d-flex">
             <img src="<%= url_for(res.photos.first)%>" width="400" />
-            <div class="d-flex">
+            <div class="d-flex w-50">
               <div class="flex-column align-self-center p-3">
+                <h3><%= res.title %></h3>
                 <p><%= res.address %></p>
                 <p><%= res.price_per_day %>R$ per day</p>
-                <p></p>
+                <p><%= res.overview %></p>
               </div>
             </div>
-            <div class="flex-column d-flex align-items-end justify-content-center w-100">
-                <a href="/parking_lots/<%= res.id%>/edit"><button type="button" class="btn btn-primary mb-2" >Modify parking-lot</button></a>
-                <%= link_to "Delete parking-lot", parking_lot_path(res), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
+            <div class="flex-column d-flex align-items-center justify-content-center w-50">
+                <a href="/parking_lots/<%= res.id%>/edit" class="w-50"><button type="button" class="btn btn-outline-primary mb-2 p-3 w-100" >Modify parking-lot</button></a>
+                <% if res.reservations.present? %>
+                  <p class="p-3 mb-2 bg-light text-dark w-50 text-center">This lot has reservations planned and cannot be deleted</p>
+                <% else %>
+                  <%= link_to "Delete parking-lot", parking_lot_path(res), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-danger mb-2 p-3 w-50" %>
+                <% end %>
             </div>
         </div>
       </div>
