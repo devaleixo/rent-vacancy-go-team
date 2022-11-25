@@ -8,6 +8,9 @@
             <img src="<%= url_for(res.parking_lot.photos.first)%>" width="400" />
             <div class="d-flex">
               <div class="flex-column align-self-center p-3">
+                <p><b>Address: </b></Address><%= res.parking_lot.address %></p>
+                <p><b>Check in: </b><%= res.reservation_date %> |<b> Check out: </b><%= res.end_reservation_date %> </p>
+                <p><b>Total Days: </b>  <%= (res.end_reservation_date - res.reservation_date).to_i %> | <b>Total Price: </b> R$<%= (res.end_reservation_date - res.reservation_date).to_i * res.parking_lot.price_per_day %>,00 </p>
                 <p><%= res.parking_lot.address %></p>
                 <p>Reservation date: <%= res.reservation_date %>, Until: <%= res.end_reservation_date %></p>
                 <%= link_to "Delete",
@@ -18,6 +21,6 @@
             </div>
           </div>
       </div>
-                <% end %>
+    <% end %>
   </div>
 </div>
