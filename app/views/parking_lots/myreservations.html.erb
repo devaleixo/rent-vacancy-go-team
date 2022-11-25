@@ -11,6 +11,8 @@
                 <p><b>Address: </b></Address><%= res.parking_lot.address %></p>
                 <p><b>Check in: </b><%= res.reservation_date %> |<b> Check out: </b><%= res.end_reservation_date %> </p>
                 <p><b>Total Days: </b>  <%= (res.end_reservation_date - res.reservation_date).to_i %> | <b>Total Price: </b> R$<%= (res.end_reservation_date - res.reservation_date).to_i * res.parking_lot.price_per_day %>,00 </p>
+                <p><%= res.parking_lot.address %></p>
+                <p>Reservation date: <%= res.reservation_date %>, Until: <%= res.end_reservation_date %></p>
                 <%= link_to "Delete",
                     reservation_path(res),
                   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-danger mb-2 p-3"

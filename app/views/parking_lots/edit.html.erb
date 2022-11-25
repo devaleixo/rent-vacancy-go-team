@@ -1,2 +1,10 @@
-<h1>ParkingLots#edit</h1>
-<p>Find me in app/views/parking_lots/edit.html.erb</p>
+<h1><%= @parking_lot.title %></h1>
+<div class="card-form">
+  <img src="<%= url_for(@parking_lot.photos.first)%>" width="400" />
+  <%= simple_form_for(@parking_lot) do |f| %>
+    <%= f.input :title, label: "Your Title, please", required: false%>
+    <%= f.input :price_per_day %>
+    <%= f.input :overview, hint: "Minimun six" %>
+    <%= f.submit %>
+  <% end %>
+</div>
