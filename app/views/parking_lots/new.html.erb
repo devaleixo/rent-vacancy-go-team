@@ -1,17 +1,22 @@
-<h1>Post a new parking-lot</h1>
+<div class="container"></div>
+  <div class= card-form>
+    <h3>Post a new parking-lot</h3>
 
-<%= simple_form_for(@parking_lot) do |f| %>
-  <%= f.input :title, label: "Your Title, please", required: false%>
-  <%= f.input :address,
-  input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
-  wrapper_html: {
-    data: {
-      controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]
+    <%= simple_form_for(@parking_lot) do |f| %>
+      <%= f.input :title, label: "Your title, please", required: false%>
+      <%= f.input :address,
+      input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+      wrapper_html: {
+        data: {
+          controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]
+          }
       }
-  }
-  %>
-  <%= f.input :price_per_day %>
-  <%= f.input :overview, hint: "Minimun six" %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
-<% end %>
+      %>
+      <%= f.input :price_per_day %>
+      <%= f.input :overview, hint: "Minimun six" %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.submit %>
+    <% end %>
+
+  </div>
+</div>
