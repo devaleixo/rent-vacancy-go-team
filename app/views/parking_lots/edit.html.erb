@@ -1,19 +1,12 @@
-<h1><%= @parking_lot.title %></h1>
 <div class="card-form">
-  <img src="<%= url_for(@parking_lot.photos.first)%>" width="400" />
+  <h1 class="text-center"><%= @parking_lot.title %></h1>
+  <div class="d-flex justify-content-center mb-4">
+    <img src="<%= url_for(@parking_lot.photos.first)%>" width="400" />
+  </div>
   <%= simple_form_for(@parking_lot) do |f| %>
-    <%= f.input :title, label: "Your Title, please", required: false%>
-    <%= f.input :address,
-    input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
-    wrapper_html: {
-      data: {
-        controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]
-        }
-    }
-    %>
+    <%= f.input :title, label: "Your New Title", required: false%>
     <%= f.input :price_per_day %>
-    <%= f.input :overview, hint: "Minimun six" %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :overview, hint: "Minimun six characters" %>
     <%= f.submit %>
   <% end %>
 </div>
