@@ -1,14 +1,24 @@
-<h1 class="text-center">My reservations</h1>
-<div class="d-flex">
-<% @reservations.each do |res| %>
-  <img src="<%= url_for(res.parking_lot.photos.first)%>" />
-  <div class="flex-column align-items-center align-self-center">
-  <p><%= res.parking_lot.address %></p>
-  <p>Reservation date: <%= res.reservation_date %></p>
-  <%= link_to "Delete",
-      reservation_path(res),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
-  <% end %>
- </div>
- </div>
+<h1 class="d-flex justify-content-center">My reservations</h1>
+
+<div class="d-flex justify-content-center">
+  <div class="flex-column">
+    <% @reservations.each do |res| %>
+      <div class="card mb-4" style="width: 80rem;">
+          <div class="d-flex">
+            <img src="<%= url_for(res.parking_lot.photos.first)%>" width="400" />
+            <div class="d-flex">
+              <div class="flex-column align-self-center p-3">
+                <p><b>Address: </b></Address><%= res.parking_lot.address %></p>
+                <p><b>Check in: </b><%= res.reservation_date %> |<b> Check out: </b><%= res.end_reservation_date %> </p>
+                <p><b>Total Days: </b>  <%= (res.end_reservation_date - res.reservation_date).to_i %> | <b>Total Price: </b> R$<%= (res.end_reservation_date - res.reservation_date).to_i * res.parking_lot.price_per_day %>,00 </p>
+                <%= link_to "Delete",
+                    reservation_path(res),
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-danger mb-2 p-3"
+                %>
+              </div>
+            </div>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>

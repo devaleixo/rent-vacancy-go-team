@@ -10,10 +10,11 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.parking_lot = @parking_lot
     @reservation.user = current_user
+    #@reservation.total_price = 
     @reservation.save
     authorize @reservation
     if @reservation.save == true
-      redirect_to parking_lots_path
+      redirect_to myreservations_parking_lots_path
     else
       redirect_to parking_lot_path(@parking_lot)
     end
@@ -29,6 +30,6 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:reservation_date)
+    params.require(:reservation).permit(:reservation_date, :end_reservation_date)
   end
 end
