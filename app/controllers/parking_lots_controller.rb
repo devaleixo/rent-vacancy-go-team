@@ -15,6 +15,8 @@ class ParkingLotsController < ApplicationController
   def show
     authorize @parking_lot
     @reservation = Reservation.new
+    @markers = [lat: @parking_lot.latitude, lng: @parking_lot.longitude]
+
   end
 
   def new
